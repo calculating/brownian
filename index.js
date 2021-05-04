@@ -1,7 +1,7 @@
 var dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
 var c = document.getElementById("global_warming");
-c.width = dimension[0] - 20;
-c.height = dimension[1] - 25;
+c.width = dimension[0];
+c.height = dimension[1];
 
 var oxygen = []
 var air = 100
