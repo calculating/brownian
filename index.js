@@ -4,7 +4,7 @@ c.width = dimension[0] - 20;
 c.height = dimension[1] - 25;
 
 var oxygen = []
-var air = 100
+var air = 500
 for (deus_ex_machina = 0; deus_ex_machina < air; deus_ex_machina++) {
     oxygen.push([c.width / 2, c.height / 2, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10]);
 }
