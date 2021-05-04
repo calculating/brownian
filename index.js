@@ -4,7 +4,7 @@ c.width = dimension[0] - 20;
 c.height = dimension[1] - 25;
 
 var oxygen = []
-var air = 20
+var air = 100
 for (deus_ex_machina = 0; deus_ex_machina < air; deus_ex_machina++) {
     oxygen.push([c.width / 2, c.height / 2, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10]);
 }
@@ -12,7 +12,7 @@ var acceleration = 0.05
 var lightspeed = c.width/10
 var ctx = c.getContext("2d");
 var brownian_motion = setInterval(step, 5);
-var sun = [c.width/2, -10]
+var sun = [c.width * 0.2, -100]
 
 function step() {
     // clear
@@ -54,9 +54,13 @@ function step() {
         // draw
         ctx.fillStyle = "#FFFFFF";
         ctx.beginPath();
-        ctx.moveTo(oxygen[molecule][0], oxygen[molecule][1]);
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height), sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
+        ctx.moveTo(oxygen[molecule][0] + c.height, oxygen[molecule][1] + c.height);
+        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.height, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height) + c.height);
+        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width + c.height, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height) + c.height);
+        ctx.shadowBlur = 10;
+        ctx.shadowOffsetX = -c.height;
+        ctx.shadowOffsetY = -c.height;
+        ctx.shadowColor = "#FFFFFF";
         ctx.fill();
     }
 }
