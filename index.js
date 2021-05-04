@@ -5,7 +5,7 @@ c.height = dimension[1] - 25;
 
 var oxygen = [c.width / 2, c.height / 2, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10]
 var acceleration = 0.05
-var lightspeed = c.width/2
+var lightspeed = c.width/10
 var ctx = c.getContext("2d");
 var brownian_motion = setInterval(step, 5);
 
