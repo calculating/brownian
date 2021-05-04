@@ -7,7 +7,7 @@ var oxygen = [c.width / 2, c.height / 2, (Math.random() - 0.5) * 10, (Math.rando
 var acceleration = 0.05
 var lightspeed = c.width/2
 var ctx = c.getContext("2d");
-var brownian_motion = setInterval(step, 10);
+var brownian_motion = setInterval(step, 5);
 
 function step() {
     for (frames = 0; frames < 1; frames++) {
