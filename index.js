@@ -29,12 +29,12 @@ function step() {
         if (Math.abs(Math.cos(direction)) / Math.cos(direction) == Math.abs(oxygen[molecule][2]) / oxygen[molecule][2]) {
             oxygen[molecule][2] += Math.cos(direction) * acceleration * (1 - oxygen[molecule][2] / lightspeed) ^ 2
         } else {
-            oxygen[molecule][2] += Math.cos(direction) * acceleration
+            oxygen[molecule][2] += Math.cos(direction) * acceleration * lightspeed * (Math.abs(oxygen[molecule][2]) / (lightspeed * 2))
         }
-        if (Math.abs(Math.cos(direction)) / Math.cos(direction) == Math.abs(oxygen[molecule][3]) / oxygen[molecule][3]) {
-            oxygen[molecule][3] += Math.cos(direction) * acceleration * (1 - oxygen[molecule][3] / lightspeed) ^ 2
+        if (Math.abs(Math.sin(direction)) / Math.sin(direction) == Math.abs(oxygen[molecule][3]) / oxygen[molecule][3]) {
+            oxygen[molecule][3] += Math.sin(direction) * acceleration * (1 - oxygen[molecule][3] / lightspeed) ^ 2
         } else {
-            oxygen[molecule][3] += Math.cos(direction) * acceleration
+            oxygen[molecule][3] += Math.sin(direction) * acceleration * lightspeed * (Math.abs(oxygen[molecule][3]) / (lightspeed * 2))
         }
 
         // avoid breaking the universe
@@ -68,13 +68,6 @@ function step() {
         }
 
         // draw
-        ctx.fillStyle = "#FFFFFF";
-        ctx.globalAlpha = 0.2;
-        ctx.beginPath();
-        ctx.moveTo(oxygen[molecule][0], oxygen[molecule][1]);
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height), sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
-        ctx.fill();
 
         ctx.globalAlpha = 1;
 
