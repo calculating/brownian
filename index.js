@@ -54,13 +54,9 @@ function step() {
         // draw
         ctx.fillStyle = "#FFFFFF";
         ctx.beginPath();
-        ctx.moveTo(oxygen[molecule][0] + c.height, oxygen[molecule][1] + c.height);
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.height, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height) + c.height);
-        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width + c.height, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height) + c.height);
-        ctx.shadowBlur = 10;
-        ctx.shadowOffsetX = -c.height;
-        ctx.shadowOffsetY = -c.height;
-        ctx.shadowColor = "#FFFFFF";
+        ctx.moveTo(oxygen[molecule][0], oxygen[molecule][1]);
+        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height), sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
+        ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
         ctx.fill();
     }
 }
