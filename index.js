@@ -53,10 +53,17 @@ function step() {
 
         // draw
         ctx.fillStyle = "#FFFFFF";
+        ctx.globalAlpha = 0.2;
         ctx.beginPath();
         ctx.moveTo(oxygen[molecule][0], oxygen[molecule][1]);
         ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height), sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
         ctx.lineTo(sun[0] + ((oxygen[molecule][0] - sun[0]) * c.height) + c.width, sun[1] + ((oxygen[molecule][1] - sun[1]) * c.height));
+        ctx.fill();
+
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = "#843031";
+        ctx.beginPath();
+        ctx.arc(oxygen[molecule][0], oxygen[molecule][1], 3, 0, 2 * Math.PI);
         ctx.fill();
     }
 }
