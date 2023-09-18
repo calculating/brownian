@@ -23,7 +23,7 @@ function spontaneous_generation(event) {
 var atomic_radius = 20
 var ctx = c.getContext("2d");
 var brownian_motion = setInterval(step, 30);
-var lightspeed = c.width / 100
+var lightspeed = c.width / 10
 
 function step() {
     // clear
